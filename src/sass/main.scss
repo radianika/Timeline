@@ -1,0 +1,59 @@
+/*
+//## Table of Contents
+//## 
+//## COMMON STYLES ............ fonts, colors variables
+//## PAGE STYLES .............. main bg, font-size and wrapper
+//## HEADER SECTION ........... header styles
+//#### BURGER STYLES .......... burger btn styles
+//#### BURGER MENU STYLES ..... styles for modal burger menu
+//## TIMELINE STYLES .......... styles for timeline section
+//*/
+
+/*quick reset*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+li {
+	list-style-type: none;
+}
+
+/* COMMON STYLES */
+
+$mainTextFont: 'Open Sans', sans-serif;
+$timelineTextFont: 'Poppins', sans-serif;
+$mainTextColor: #ffffff;
+$timelineTextColor: #ffd7f1;
+$mainTextSize: 1.6rem;
+
+
+/* PAGE STYLES */
+
+html {
+	font-size: 10px;
+}
+
+.body {
+	background-color: #000000;
+	background: url('../images/background.jpg') 50% 50% no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	font-family: $mainTextFont;
+	color: $mainTextColor;
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		max-width: 1625px;
+		margin: auto;
+		height: 100%;
+	}
+}
