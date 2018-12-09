@@ -7,6 +7,12 @@
 //#### BURGER STYLES .......... burger btn styles
 //#### BURGER MENU STYLES ..... styles for modal burger menu
 //## TIMELINE STYLES .......... styles for timeline section
+//#### TIMELINE BOX ........... styles for circle and items
+//#### TIMELINE GRADIENT LINE
+//#### TIMELINE DESCRIPTION ... right part of timeline section
+//#### TIMELINE DATE .......... big date
+//#### INFO SECTIONS .......... styles for both info sections
+//#### MEDIA .................. @media
 //*/
 
 /*quick reset*/
@@ -30,7 +36,8 @@ sans-serif;
 $mainTextColor: #ffffff;
 $timelineTextColor: #ffd7f1;
 $mainTextSize: 1.6rem;
-$cursor: url(../images/cursor.png), default;
+$cursor: url(../images/cursor.png),
+default;
 $hoverTextColor: #de2bba;
 
 /* PAGE STYLES */
@@ -51,7 +58,7 @@ html {
 		display: flex;
 		flex-direction: column;
 		margin: auto;
-		width:78vw;
+		width: 78vw;
 		height: 100%;
 	}
 }
@@ -116,12 +123,13 @@ html {
 	align-items: center;
 	background-color: white;
 	text-align: center;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	top: 0;
 	padding-top: 4rem;
 	width: calc(22vw + 3.2rem);
-	height: 100vh; 
+	height: 100vh;
+	z-index: 2;
 }
 
 .close-btn {
@@ -165,18 +173,20 @@ html {
 	transition: all .3s;
 	cursor: $cursor;
 	list-style-type: none;
-	&:last-child{
+	&:last-child {
 		margin-bottom: 0;
 	}
-	&:hover{
+	&:hover {
 		color: $hoverTextColor;
 	}
 }
-.menu__link{
+
+.menu__link {
 	text-decoration: none;
 	color: inherit;
 	cursor: $cursor;
 }
+
 .menu__btn {
 	color: white;
 	background-color: black;
@@ -184,7 +194,7 @@ html {
 	padding: 2rem 2.5rem;
 	transition: all .3s;
 	cursor: $cursor;
-	&:hover{
+	&:hover {
 		background-color: $hoverTextColor;
 	}
 }
@@ -220,14 +230,16 @@ html {
 
 /* TYMELINE SECTION */
 
-.timeline{
+.timeline {
 	position: relative;
 	height: 100%;
 	min-height: 630px;
-	order:2;
+	order: 2;
 }
 
-.timeline__box{
+/* TIMELINE BOX */
+
+.timeline__box {
 	height: 43vw;
 	width: 43vw;
 	position: absolute;
@@ -241,41 +253,45 @@ html {
 .timeline__dates {
 	position: absolute;
 	top: calc(50% - 5px);
-	left:50%;
+	left: 50%;
 	color: $mainTextColor;
 	transform: translate(-100%, -50%);
-	transition: all 3s;
+	transition: all 7s;
 }
 
-.timeline__dates--active{
+.timeline__dates--active {
 	color: $timelineTextColor;
 }
 
 
 
-//gradient
-.timeline__line__box{
+/* TIMELINE GRADIENT LINE */
+
+.timeline__line__box {
 	position: absolute;
 	width: 12vw;
-	left: 19vw;
+	left: 16vw;
 	top: calc(50% - 7.5px); ///magic for poppins
 	height: 1.5rem;
 	transform: translateY(-100%);
 }
-.timeline__line__part{
+
+.timeline__line__part {
 	width: 100%;
 	height: 100%;
 }
-.timeline__line--gradient{
+
+.timeline__line--gradient {
 	background: linear-gradient(to right, rgba(255, 175, 227, 1) 0%, rgba(250, 44, 176, 1) 78%, rgba(250, 44, 176, 1) 100%);
 }
 
-.timeline__line--hover{
+.timeline__line--hover {
 	background-color: black;
 	position: absolute;
 	top: 0;
 	right: 0;
 	width: 100%;
+	height: 1.5rem;
 }
 
 .timelapse {
@@ -294,19 +310,21 @@ html {
 	}
 }
 
+/* INFO SECTIONS */
+/* TIMELINE DESCRIPTION */
 
 
-
-//// right part
-.timeline__description{
+.timeline__description {
 	position: absolute;
-	left: 33vw;
+	left: 30vw;
 	height: 100%;
 	text-align: left;
 	max-width: 36vw;
 }
 
-.timeline__date--main{
+/* TIMELINE DATE */
+
+.timeline__date--main {
 	padding: 0;
 	margin: 0;
 	font-family: $timelineTextFont;
@@ -324,7 +342,7 @@ html {
 	color: transparent;
 }
 
-.timeline__sub{
+.timeline__sub {
 	position: absolute;
 	top: 55%;
 	color: $timelineTextColor;
@@ -332,7 +350,7 @@ html {
 	width: 37rem;
 }
 
-.timeline__title{
+.timeline__title {
 	position: absolute;
 	top: 0;
 	color: $timelineTextColor;
@@ -341,35 +359,108 @@ html {
 	width: 37rem;
 }
 
+/* MEDIA */
+
+@media (max-width: 767.98px) {
+	.body__wrapper {
+		width: 85vw;
+	}
+	.info {
+		width: 100%;
+	}
+	.info__title {
+		font-size: 2rem;
+	}
+	.info__text {
+		font-size: 1.2rem;
+	}
+	.header {
+		order: 0;
+	}
+	.info--top {
+		order: 1;
+	}
+	.timeline {
+		overflow: hidden;
+	}
+	.timeline__box {
+		left: 50%;
+		top: auto;
+		bottom: 0;
+		transform: translate(-50%, 73%) rotate(-90deg);
+		width: 100vw;
+		height: 100vw;
+	}
+	.timeline__description {
+		left: 18vw;
+		max-width: 84vw;
+	}
+	.timeline__title {
+		font-size: 2rem;
+		width: 20rem;
+	}
+	.timeline__date--main {
+		font-size: 5.6rem;
+		top: 40%;
+		line-height: 0.85;
+	}
+	.timeline__sub {
+		top: 45%;
+		width: 20rem;
+	}
+	.timeline__line__box {
+		left: 0;
+		width: 9.8vw;
+		height: 8px;
+		top: 39%;
+	}
+}
 
 
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.body__wrapper {
+		width: 75vw;
+	}
+	.timeline__title {
+		font-size: 2rem;
+		width: 27rem;
+		top: 13%;
+	}
+	.timeline__date--main {
+		font-size: 12rem;
+		line-height: 0.85;
+	}
+	.timeline__sub {
+		width: 27rem;
+	}
+	.info {
+		width: 45vw;
+	}
+	.burger__menu {
+		height: 70vh;
+	}
+	.timeline__dates {
+		transition: all 1s;
+	}
+}
 
-
-
-
-
-
-
-
-
-//@media (max-width: 575.98px) { ... }
-//
-//// Small devices (landscape phones, 576px and up)
-//@media (min-width: 576px) and (max-width: 767.98px) { ... }
-//
-//// Medium devices (tablets, 768px and up)
-//@media (min-width: 768px) and (max-width: 991.98px) { 
-//}
-//
-////// Large devices (desktops, 992px and up)
-//@media (min-width: 992px)  {
-//	.body__wrapper{
-//		max-width: 1070px; 
-//}
-//
-////// Extra large devices (large desktops, 1200px and up)
-//@media (min-width: 1200px) {
-//	.body__wrapper{
-//		max-width: 1620px; 
-//	}}
+@media (min-width: 1600px) {
+	.body__wrapper {
+		width: 85vw;
+	}
+	.timeline__title {
+		font-size: 2rem;
+		width: 27rem;
+	}
+	.timeline__date--main {
+		font-size: 24rem;
+		line-height: 0.85;
+	}
+	.timeline__sub {
+		width: 27rem;
+	}
+	.info {
+		width: 45vw;
+	}
+}

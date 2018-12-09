@@ -13,7 +13,7 @@ let visibilityClass = 'hidden';
 //functions
 function openBurgerMenu(){
 	let headerBox = header.getBoundingClientRect();
-	let headerTop = headerBox.top + pageYOffset;
+	let headerTop = headerBox.top;
 	burgerMenu.style.top = headerTop + 'px';
 	toggleMenu();
 }
