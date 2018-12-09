@@ -51,6 +51,7 @@ html {
 		display: flex;
 		flex-direction: column;
 		margin: auto;
+		width:78vw;
 		height: 100%;
 	}
 }
@@ -60,10 +61,10 @@ html {
 .header {
 	display: flex;
 	justify-content: space-between;
-	width: 85%;
+	width: 100%;
 	margin: auto;
 	align-items: center;
-	//  order: 1;
+	order: 1;
 	padding: 4rem 0 2rem 0;
 	position: relative;
 }
@@ -115,12 +116,12 @@ html {
 	align-items: center;
 	background-color: white;
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	right: 0;
 	top: 0;
 	padding-top: 4rem;
-	width: calc(15vw + 3.2rem);
-	height: 100vh; //change it later!!!
+	width: calc(22vw + 3.2rem);
+	height: 100vh; 
 }
 
 .close-btn {
@@ -215,6 +216,141 @@ html {
 		order: 4;
 	}
 }
+
+
+/* TYMELINE SECTION */
+
+.timeline{
+	position: relative;
+	height: 100%;
+	min-height: 630px;
+	order:2;
+}
+
+.timeline__box{
+	height: 43vw;
+	width: 43vw;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-80%, -50%);
+	border: 1px solid white;
+	border-radius: 50%;
+}
+
+.timeline__dates {
+	position: absolute;
+	top: calc(50% - 5px);
+	left:50%;
+	color: $mainTextColor;
+	transform: translate(-100%, -50%);
+	transition: all 3s;
+}
+
+.timeline__dates--active{
+	color: $timelineTextColor;
+}
+
+
+
+//gradient
+.timeline__line__box{
+	position: absolute;
+	width: 12vw;
+	left: 19vw;
+	top: calc(50% - 7.5px); ///magic for poppins
+	height: 1.5rem;
+	transform: translateY(-100%);
+}
+.timeline__line__part{
+	width: 100%;
+	height: 100%;
+}
+.timeline__line--gradient{
+	background: linear-gradient(to right, rgba(255, 175, 227, 1) 0%, rgba(250, 44, 176, 1) 78%, rgba(250, 44, 176, 1) 100%);
+}
+
+.timeline__line--hover{
+	background-color: black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+}
+
+.timelapse {
+	animation-name: timelapse;
+	animation-fill-mode: forwards;
+	animation-duration: 2s;
+	animation-timing-function: cubic-bezier(.86, .05, .4, .96);
+}
+
+@keyframes timelapse {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+
+
+
+//// right part
+.timeline__description{
+	position: absolute;
+	left: 33vw;
+	height: 100%;
+	text-align: left;
+	max-width: 36vw;
+}
+
+.timeline__date--main{
+	padding: 0;
+	margin: 0;
+	font-family: $timelineTextFont;
+	font-size: 19.8rem;
+	line-height: 0.8; ///magic for poppins
+	font-weight: 700;
+	position: absolute;
+	top: calc(50% + 6px);
+	transform: translateY(-100%);
+	background: linear-gradient(to right, rgba(250, 44, 176, 1) 0%, rgba(192, 42, 198, 1) 100%);
+	-webkit-background-clip: text;
+	-o-background-clip: text;
+	-moz-background-clip: text;
+	-ms-background-clip: text;
+	color: transparent;
+}
+
+.timeline__sub{
+	position: absolute;
+	top: 55%;
+	color: $timelineTextColor;
+	font-size: $mainTextSize;
+	width: 37rem;
+}
+
+.timeline__title{
+	position: absolute;
+	top: 0;
+	color: $timelineTextColor;
+	font-size: 2.8rem;
+	font-weight: 600;
+	width: 37rem;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 //@media (max-width: 575.98px) { ... }
