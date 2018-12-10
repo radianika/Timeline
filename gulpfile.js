@@ -36,9 +36,9 @@ var path = {
 
 gulp.task('scripts', function () {
 	gulp.src(path.src.js)
-//		.pipe(babel({
-//			presets: ['@babel/env']
-//		}))
+		.pipe(babel({
+			presets: ['@babel/env']
+		}))
 		.pipe(gulp.dest(path.build.js));
 });
 
