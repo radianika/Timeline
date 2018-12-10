@@ -13,7 +13,8 @@ let visibilityClass = 'hidden';
 //functions
 function openBurgerMenu(){
 	let headerBox = header.getBoundingClientRect();
-	let headerTop = headerBox.top;
+	let headerTop = headerBox.top + window.scrollY;
+	console.log(headerBox.top+ window.scrollY);
 	burgerMenu.style.top = headerTop + 'px';
 	toggleMenu();
 }
@@ -24,3 +25,8 @@ function toggleMenu(){
 ///events
 openMenuBtn.addEventListener('click', openBurgerMenu);
 closeMenuBtn.addEventListener('click', toggleMenu);
+
+
+if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+     document.querySelector('.timeline__date--main').setAttribute("style","color: #de2bba");
+}

@@ -123,7 +123,7 @@ html {
 	align-items: center;
 	background-color: white;
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	right: 0;
 	top: 0;
 	padding-top: 4rem;
@@ -310,9 +310,7 @@ html {
 	}
 }
 
-/* INFO SECTIONS */
 /* TIMELINE DESCRIPTION */
-
 
 .timeline__description {
 	position: absolute;
@@ -362,6 +360,9 @@ html {
 /* MEDIA */
 
 @media (max-width: 767.98px) {
+	.body {
+		background: url('../images/background_rotate.jpg') 58% 73% no-repeat;
+	}
 	.body__wrapper {
 		width: 85vw;
 	}
@@ -397,7 +398,7 @@ html {
 	}
 	.timeline__title {
 		font-size: 2rem;
-		width: 20rem;
+		width: 45vw;
 	}
 	.timeline__date--main {
 		font-size: 5.6rem;
@@ -406,7 +407,7 @@ html {
 	}
 	.timeline__sub {
 		top: 45%;
-		width: 20rem;
+		width: 45vw;
 	}
 	.timeline__line__box {
 		left: 0;
