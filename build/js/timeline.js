@@ -96,7 +96,6 @@ function arangeTimelineItemsAround(pos) {
   var translate = -22.8;
 
   if (window.screen.width < 767.98 || document.body.clientWidth < 767.98) {
-    console.log(document.body.clientWidth);
     translate = -52.8;
   }
 

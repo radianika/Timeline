@@ -14,7 +14,6 @@ let visibilityClass = 'hidden';
 function openBurgerMenu(){
 	let headerBox = header.getBoundingClientRect();
 	let headerTop = headerBox.top + window.scrollY;
-	console.log(headerBox.top+ window.scrollY);
 	burgerMenu.style.top = headerTop + 'px';
 	toggleMenu();
 }

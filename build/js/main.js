@@ -12,7 +12,6 @@ var visibilityClass = 'hidden'; /// funcrions
 function openBurgerMenu() {
   var headerBox = header.getBoundingClientRect();
   var headerTop = headerBox.top + window.scrollY;
-  console.log(headerBox.top + window.scrollY);
   burgerMenu.style.top = headerTop + 'px';
   toggleMenu();
 }
